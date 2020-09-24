@@ -411,7 +411,7 @@ resource "aws_ec2_transit_gateway_route_table_propagation" "tgw-rt-prod-to-vpc-3
 
 resource "aws_key_pair" "test-tgw-keypair" {
   key_name   = "test-tgw-keypair"
-  public_key = "${var.public_key}"
+  public_key = file("${path.module}/id_rsa.pub")
 }
 
 # Security Groups
